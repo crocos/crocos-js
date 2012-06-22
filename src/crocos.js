@@ -242,10 +242,10 @@
       id = self.data('fbx-id');
       field = self.data('fbx-field');
       cache_key = "fbx_graph_" + id;
-      if (cache.has(cache_key, {
+      if (crocos.cache.has(cache_key, {
         expire: 3600
       })) {
-        data = cache.get(cache_key);
+        data = crocos.cache.get(cache_key);
         if ((data != null) && field in data) {
           return fbx.setText(self, data[field]);
         }
@@ -256,7 +256,7 @@
     if (to_fetch_ids.length) {
       return FB.api("?locale=ja_JP&ids=" + (to_fetch_ids.join(',')), function(response) {
         $.each(response, function(i, val) {
-          return cache.set("fbx_graph_" + i, val);
+          return crocos.cache.set("fbx_graph_" + i, val);
         });
         return target.each(function() {
           var field, id, self;
