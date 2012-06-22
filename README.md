@@ -27,7 +27,7 @@ crocos-js をロードすると、frame の中かどうかを判定して `<html
 きるようになってます。
 
 
-#### Javascrip Facebook SDK が初期化されたら任意のコードを実行する方法
+#### Javascript Facebook SDK が初期化されたら任意のコードを実行する方法
 
 (`crocos_facebook_initialized` の記述が必要です)
 
