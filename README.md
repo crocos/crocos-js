@@ -11,6 +11,9 @@ jQuery のロード後に `crocos.min.js` をロードしてください。
     <script src="crocos.min.js"></script>
 
 
+Facebook 連携機能を使う場合は、`FB.init` 後に `window.crocos_facebook_initialized = true;` と記述してください。
+
+
 Modules
 --------------------------------------------------------------------------------
 
@@ -25,6 +28,8 @@ crocos-js をロードすると、frame の中かどうかを判定して `<html
 
 
 #### Javascrip Facebook SDK が初期化されたら任意のコードを実行する方法
+
+(`crocos_facebook_initialized` の記述が必要です)
 
     crocos.wait('FB').done(function(){
         // here.

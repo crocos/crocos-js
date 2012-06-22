@@ -33,7 +33,7 @@ asyncTest("fb.init", function() {
     });
 
     // Additional initialization code here
-    crocos.facebook.initialized = true;
+    window.crocos_facebook_initialized = true;
     loaded = true;
     stop();
   };

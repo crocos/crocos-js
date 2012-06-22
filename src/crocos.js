@@ -62,7 +62,7 @@
   crocos.wait = function(name) {
     var dfd = new $.Deferred();
     var check_variable = function() {
-      if (name == "FB" && name in global && crocos.facebook.initialized) {
+      if (name == "FB" && name in global && "crocos_facebook_initialized" in global && global.crocos_facebook_initialized) {
         return dfd.resolve(global[name]);
       } else if (name in global && name != "FB") {
         return dfd.resolve(global[name]);
@@ -215,9 +215,7 @@
   /**
    * facebook
    */
-  crocos.facebook = {
-    initialized: false
-  };
+  crocos.facebook = {};
 
   /**
    * crocos.facebook.ready
@@ -338,7 +336,7 @@
     });
 
     setTimeout(function(){
-      crocos.facebook.initialized = true;
+      global.crocos_facebook_initialized = true;
     }, 5000);
   });
 
