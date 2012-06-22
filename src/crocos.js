@@ -254,7 +254,7 @@
       }
     });
     if (to_fetch_ids.length) {
-      return FB.api("?locale=" + crocos.locale + "&ids=" + (to_fetch_ids.join(',')), function(response) {
+      return FB.api("?locale=ja_JP&ids=" + (to_fetch_ids.join(',')), function(response) {
         $.each(response, function(i, val) {
           return cache.set("fbx_graph_" + i, val);
         });
