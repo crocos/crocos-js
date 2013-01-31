@@ -19,3 +19,20 @@ test("truncate", function() {
   equal("いろは...", crocos.util.truncate(str_from_ja, 6, "..."));
   equal(str_from, crocos.util.truncate(str_from, str_from.length));
 });
+
+test('arrayAdd', function() {
+  var a = [];
+  deepEqual([], a);
+
+  crocos.util.arrayAdd(a, 'a');
+  deepEqual(['a'], a);
+  crocos.util.arrayAdd(a, 'a');
+  deepEqual(['a'], a);
+
+  crocos.util.arrayAdd(a, 'b');
+  deepEqual(['a', 'b'], a);
+});
+
+test('arrayChunk', function() {
+  deepEqual([[1, 2, 3], [4, 5]], crocos.util.arrayChunk([1, 2, 3, 4, 5], 3));
+});
