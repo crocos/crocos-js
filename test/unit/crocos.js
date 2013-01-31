@@ -10,15 +10,13 @@ asyncTest("crocos-js normal wait", function() {
   });
 
   setTimeout(function(){
-    start();
     ok(!find);
     window['crocos_wait_test_000'] = "dummy";
-    stop();
   }, 200);
 
   setTimeout(function(){
-    start();
     ok(find);
+    start();
   }, 800);
 });
 
