@@ -2,6 +2,13 @@ crocos-js (1.1.0)
 ================================================================================
 
 
+Build Status
+--------------------------------------------------------------------------------
+
+- master: [![Build Status](https://travis-ci.org/crocos/crocos-js.png?branch=master)](https://travis-ci.org/crocos/crocos-js)
+- develop: [![Build Status](https://travis-ci.org/crocos/crocos-js.png?branch=develop)](https://travis-ci.org/crocos/crocos-js)
+
+
 Getting Started
 --------------------------------------------------------------------------------
 

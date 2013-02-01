@@ -1,4 +1,4 @@
-/*! crocos-js - v1.1.0 - 2013-01-31
+/*! crocos-js - v1.1.0 - 2013-02-01
 * Copyright (c) 2013 ; Licensed  */
 
 (function(exports) {
