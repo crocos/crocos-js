@@ -1,13 +1,13 @@
-crocos-js
+crocos-js (1.1.0)
 ================================================================================
 
 
 Getting Started
 --------------------------------------------------------------------------------
 
-jQuery のロード後に `crocos.min.js` をロードしてください。
+jQuery のロード後に `dist/crocos.min.js` をロードしてください。
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="crocos.min.js"></script>
 
 
@@ -32,7 +32,7 @@ crocos-js をロードすると、frame の中かどうかを判定して `<html
 (`crocos_facebook_initialized` の記述が必要です)
 
     crocos.wait('FB').done(function(){
-        // here.
+      // here.
     });
 
 
@@ -40,16 +40,16 @@ crocos-js をロードすると、frame の中かどうかを判定して `<html
 
 対応ブラウザのみで動作するよ
 
-    crocos.cache.with('cache_key', function(dfd) {
-        // キャッシュがない場合の処理
-        FB.api('/me', function(response) {
-            dfd.resolve(response);
-        });
-        
-        return dfd.promise();
+    crocos.cache.in('cache_key', function(dfd) {
+      // キャッシュがない場合の処理
+      FB.api('/me', function(response) {
+        dfd.resolve(response);
+      });
+      
+      return dfd.promise();
     }, { expire: 3600 }).done(function(response){
-        // キャッシュがあっても無くてもここで受け取れる
-        console.log(response);
+      // キャッシュがあっても無くてもここで受け取れる
+      console.log(response);
     });
 
 

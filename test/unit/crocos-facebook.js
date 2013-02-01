@@ -11,18 +11,11 @@ asyncTest("fb.init", function() {
   var loaded = false;
 
   crocos.wait("FB").done(function(){
-    start();
     ok(loaded);
+    start();
   });
 
-  // // depreacated
-  // crocos.facebook.ready().done(function(){
-  //   start();
-  //   ok(loaded);
-  // });
-
   window.fbAsyncInit = function() {
-    start();
     ok(!loaded);
 
     FB.init({
@@ -33,9 +26,8 @@ asyncTest("fb.init", function() {
     });
 
     // Additional initialization code here
-    window.crocos_facebook_initialized = true;
     loaded = true;
-    stop();
+    window.crocos_facebook_initialized = true;
   };
 
   // Load the SDK Asynchronously
@@ -43,7 +35,7 @@ asyncTest("fb.init", function() {
      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
+     js.src = "https://connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
    }(document));
 });
