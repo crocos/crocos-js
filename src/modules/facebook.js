@@ -95,7 +95,7 @@
         if (!ids.length) {
           return;
         }
-        facebook.api('/', { ids: ids, fields: fetchQueue.fields }).done(function(response) {
+        facebook.api('/', { ids: ids, fields: fetchQueue.fields, locale: crocos.locale }).done(function(response) {
           console.log(response);
           $targets.each(function() {
             var $self = $(this)

@@ -1,5 +1,12 @@
-crocos-js (1.1.0)
+crocos-js (1.1.1)
 ================================================================================
+
+
+Build Status
+--------------------------------------------------------------------------------
+
+- master: [![Build Status](https://travis-ci.org/crocos/crocos-js.png?branch=master)](https://travis-ci.org/crocos/crocos-js)
+- develop: [![Build Status](https://travis-ci.org/crocos/crocos-js.png?branch=develop)](https://travis-ci.org/crocos/crocos-js)
 
 
 Getting Started
@@ -40,7 +47,7 @@ crocos-js をロードすると、frame の中かどうかを判定して `<html
 
 対応ブラウザのみで動作するよ
 
-    crocos.cache.in('cache_key', function(dfd) {
+    crocos.cache.on('cache_key', function(dfd) {
       // キャッシュがない場合の処理
       FB.api('/me', function(response) {
         dfd.resolve(response);
