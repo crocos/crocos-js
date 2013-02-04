@@ -96,7 +96,6 @@
           return;
         }
         facebook.api('/', { ids: ids, fields: fetchQueue.fields, locale: crocos.locale }).done(function(response) {
-          console.log(response);
           $targets.each(function() {
             var $self = $(this)
               , fbxId = $self.attr('data-fbx-id')
