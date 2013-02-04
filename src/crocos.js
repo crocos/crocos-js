@@ -8,7 +8,9 @@
 
   "use strict";
 
-  var crocos = {};
+  var crocos = {
+    locale: 'ja_JP'
+  };
 
   exports.crocos = crocos;
 
