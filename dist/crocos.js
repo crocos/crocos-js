@@ -1,11 +1,13 @@
-/*! crocos-js - v1.1.0 - 2013-02-01
+/*! crocos-js - v1.1.0 - 2013-02-04
 * Copyright (c) 2013 ; Licensed  */
 
 (function(exports) {
 
   "use strict";
 
-  var crocos = {};
+  var crocos = {
+    locale: 'ja_JP'
+  };
 
   exports.crocos = crocos;
 
@@ -446,7 +448,7 @@
         if (!ids.length) {
           return;
         }
-        facebook.api('/', { ids: ids, fields: fetchQueue.fields }).done(function(response) {
+        facebook.api('/', { ids: ids, fields: fetchQueue.fields, locale: crocos.locale }).done(function(response) {
           console.log(response);
           $targets.each(function() {
             var $self = $(this)
