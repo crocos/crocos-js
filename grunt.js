@@ -27,7 +27,8 @@ module.exports = function(grunt) {
           '<file_strip_banner:src/modules/logger.js>',
           '<file_strip_banner:src/modules/util.js>',
           '<file_strip_banner:src/modules/cache.js>',
-          '<file_strip_banner:src/modules/facebook.js>'
+          '<file_strip_banner:src/modules/facebook.js>',
+          '<file_strip_banner:src/modules/beacon.js>'
         ],
         dest: 'dist/crocos.js'
       }
