@@ -1,7 +1,6 @@
-/*! crocos-js - v1.1.1 - 2013-02-04
-* Copyright (c) 2013 ; Licensed  */
-
-(function(exports) {
+/*! crocos-js - v1.2.0 - 2013-05-30
+ * https://github.com/crocos/crocos-js
+ * Copyright (c) 2013 ; Licensed  */(function(exports) {
 
   "use strict";
 
@@ -11,9 +10,7 @@
 
   exports.crocos = crocos;
 
-  $(function() {
-    $('html').addClass(window.top === window.self ? 'self-frame' : 'in-frame');
-  });
+  $('html').addClass(window.top === window.self ? 'self-frame' : 'in-frame');
 
 }(typeof exports === 'undefined'? this : exports));
 
@@ -554,9 +551,67 @@
 
   $(function() {
     facebook.fbx();
+
+    facebook.ready().done(function(loginStatus) {
+      $('html').addClass('fbstatus-' + (('status' in loginStatus) ? loginStatus.status : 'unknown'));
+    });
   });
 
   exports.facebook = facebook;
 
 }(crocos));
 
+
+(function(exports) {
+
+  'use strict';
+
+  var backend = {}, beacon = (function() {
+    var Beacon = function(backend) {
+      this.backend = backend;
+      this.data = {};
+    };
+
+    Beacon.prototype.push = function(data) {
+      return this.backend.push($.extend({}, this.data, data));
+    };
+
+    Beacon.prototype.setData = function(data) {
+      this.data = data;
+    };
+
+    Beacon.prototype.getData = function() {
+      return this.data;
+    };
+
+    return Beacon;
+  }());
+
+  backend.WebAPI = (function() {
+    var WebAPI = function(endpoint) {
+      var options = $.extend({
+        method: 'POST',
+        format: 'json'
+      }, (arguments.length > 1 ? arguments[1] : {}));
+
+      this.endpoint = endpoint;
+      this.method = options.method;
+      this.format = options.format;
+    };
+
+    WebAPI.prototype.push = function(data) {
+      return $.ajax({
+        url: this.endpoint,
+        data: data,
+        dataType: this.format,
+        type: this.method
+      });
+    };
+
+    return WebAPI;
+  }());
+
+  exports.beacon = beacon;
+  exports.beaconBackend = backend;
+
+}(crocos));

@@ -14,9 +14,7 @@
 
   exports.crocos = crocos;
 
-  $(function() {
-    $('html').addClass(window.top === window.self ? 'self-frame' : 'in-frame');
-  });
+  $('html').addClass(window.top === window.self ? 'self-frame' : 'in-frame');
 
 }(typeof exports === 'undefined'? this : exports));
 

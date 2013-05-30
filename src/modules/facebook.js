@@ -201,6 +201,10 @@
 
   $(function() {
     facebook.fbx();
+
+    facebook.ready().done(function(loginStatus) {
+      $('html').addClass('fbstatus-' + (('status' in loginStatus) ? loginStatus.status : 'unknown'));
+    });
   });
 
   exports.facebook = facebook;

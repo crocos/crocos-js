@@ -1,4 +1,4 @@
-crocos-js (1.1.1)
+crocos-js (1.2.0)
 ================================================================================
 
 
@@ -80,4 +80,37 @@ Facebook 系のライブラリ
 - crocos.util.nl2br(text)
 - crocos.util.truncate(text, length, trimmarker)
 - crocos.util.redirect(url)
+
+
+### crocos-beacon
+
+あとでかく
+
+    var beacon = new crocos.beacon(new crocos.beaconBackend.WebAPI(
+      'http://example.com/beacon/endpoint'
+    ));
+
+    beacon.setData({
+      userId: 12345,
+      sessionId: 'c11e2c3dc57101640f1e842a3face454342a0355'
+    });
+
+    crocos.facebook.ready().done(function() {
+      FB.ui({
+        method: 'feed',
+        // ...
+      }, function(response) {
+        if ('post_id' in response) {
+          // POST http://example.com/beacon/endpoint
+          // {
+          //   userId    : 12345
+          //   sessionId : 'c11e2c3dc57101640f1e842a3face454342a0355'
+          //   postId    : response.post_id
+          // }
+          beacon.push({
+            postId: response.post_id
+          });
+        }
+      });
+    });
 
