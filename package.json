@@ -1,6 +1,6 @@
 {
   "name": "crocos-js",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "crocos-js",
   "directories": {
     "test": "test"
@@ -15,7 +15,13 @@
   "author": "Keisuke SATO <sato@crocos.co.jp>",
   "license": "BSD",
   "devDependencies": {
-    "grunt": ">= 0.3.17"
+    "grunt": ">= 0.3.17",
+    "grunt-contrib-clean": ">= 0.4.1",
+    "grunt-contrib-watch": ">= 0.4.4",
+    "grunt-contrib-qunit": ">= 0.2.1",
+    "grunt-contrib-uglify": ">= 0.2.1",
+    "grunt-contrib-concat": ">= 0.3.0"
   },
+  "homepage": "https://github.com/crocos/crocos-js",
   "readmeFilename": "README.md"
 }

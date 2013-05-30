@@ -1,7 +1,6 @@
-/*! crocos-js - v1.1.1 - 2013-02-05
-* Copyright (c) 2013 ; Licensed  */
-
-(function(exports) {
+/*! crocos-js - v1.2.0 - 2013-05-30
+ * https://github.com/crocos/crocos-js
+ * Copyright (c) 2013 ; Licensed  */(function(exports) {
 
   "use strict";
 
@@ -11,9 +10,7 @@
 
   exports.crocos = crocos;
 
-  $(function() {
-    $('html').addClass(window.top === window.self ? 'self-frame' : 'in-frame');
-  });
+  $('html').addClass(window.top === window.self ? 'self-frame' : 'in-frame');
 
 }(typeof exports === 'undefined'? this : exports));
 
@@ -554,6 +551,10 @@
 
   $(function() {
     facebook.fbx();
+
+    facebook.ready().done(function(loginStatus) {
+      $('html').addClass('fbstatus-' + (('status' in loginStatus) ? loginStatus.status : 'unknown'));
+    });
   });
 
   exports.facebook = facebook;
