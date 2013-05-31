@@ -15,7 +15,7 @@
   "author": "Keisuke SATO <sato@crocos.co.jp>",
   "license": "BSD",
   "devDependencies": {
-    "grunt": ">= 0.3.17",
+    "grunt": ">= 0.4.1",
     "grunt-contrib-clean": ">= 0.4.1",
     "grunt-contrib-watch": ">= 0.4.4",
     "grunt-contrib-qunit": ">= 0.2.1",
