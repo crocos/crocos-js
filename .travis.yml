@@ -1,6 +1,9 @@
 script:
   - "npm test"
 
+before_script:
+  - npm install -g grunt-cli
+
 language: node_js
 
 node_js:
